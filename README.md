@@ -69,6 +69,30 @@ A backend automation script that digitizes offline text data by uploading it to 
 3.  **View Results:**
     The script will process the files in `feedback_data/` and display the HTTP success codes (200 OK) received from the test server.
 
+
+    ### 5. Automated Sales Reporting System (`sales_report.py`)
+A business intelligence script that ingests raw sales data (JSON) and outputs actionable insights via Email and CSV.
+
+* **Problem Solved:** Automates the weekly task of calculating revenue leaders and sales trends, replacing manual Excel work.
+* **Key Features:**
+    * **JSON Parsing:** Converts nested JSON objects (Car Make/Model/Year) into flat, readable formats.
+    * **Financial Analysis:** Algorithms identify the highest revenue generator and most popular sales year automatically.
+    * **Automated Reporting:** Simulates sending an executive summary email and auto-generates a detailed CSV attachment.
+
+---
+### 🔹 Tool 5: How to Run `sales_report.py`
+1.  Navigate to the directory:
+    ```bash
+    cd Sales-Reporting-Tool
+    ```
+2.  Run the script:
+    ```bash
+    python3 sales_report.py
+    ```
+3.  **View Results:**
+    * The script will print an **Email Simulation** to the console.
+    * It will generate a file named `sales_summary_report.csv` in the same folder.
+
 ---
 
 ## ⚙️ Installation & Usage
