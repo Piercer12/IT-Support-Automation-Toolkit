@@ -26,6 +26,25 @@ A Python automation script for batch processing user data during system migratio
     * **CSV Parsing:** Reads and modifies CSV data structures programmatically.
     * **Regex Substitution:** Safely identifies and replaces email domains without affecting usernames.
     * **Dynamic Column Handling:** Automatically detects email columns even if headers contain whitespace errors.
+ 
+    * ### 3. CLI Employee Email Lookup (`email_lookup.py`)
+A quick command-line utility to retrieve user contact details without manually opening database files.
+
+* **Problem Solved:** Saves time for IT support staff who frequently need to find user emails during account troubleshooting.
+* **Key Features:**
+    * **Instant Lookup:** Accepts a First and Last Name as arguments to return the email instantly.
+    * **Dictionary Mapping:** Efficiently maps names to emails using Python dictionaries for O(1) lookup speed.
+    * **Error Handling:** Gracefully handles missing names or missing database files.
+
+---
+### 🔹 Tool 3: How to Run `email_lookup.py`
+1.  **Run the script:**
+    Pass the user's First and Last name as arguments.
+    ```bash
+    python3 email_lookup.py John Doe
+    ```
+2.  **View Results:**
+    Output: `Email for John Doe: jdoe@example.com`
 
 ---
 
