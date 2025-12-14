@@ -1,7 +1,7 @@
 # 🛠️ IT Support Automation Toolkit
 
 ## 🚀 Project Overview
-This repository serves as a centralized collection of Python automation scripts and utilities designed to streamline daily IT support tasks. The tools included here focus on reducing manual workload for System Administrators by automating log analysis, error tracking, and file management.
+This repository serves as a centralized collection of Python automation scripts and utilities designed to streamline daily IT support tasks. The tools included here focus on reducing manual workload for System Administrators by automating log analysis, data migration, and error tracking.
 
 **Goal:** To apply Python scripting to solve real-world operational challenges in an Enterprise Support environment.
 
@@ -17,7 +17,15 @@ A command-line interface (CLI) tool that allows support engineers to filter mass
     * **Dynamic Filtering:** Accepts multiple keywords from the user to perform complex searches.
     * **Automated Export:** Saves all matching lines to a dedicated `errors_found.log` file for documentation.
     * **Cross-Platform:** Uses `os.path` and `os.makedirs` to ensure compatibility across Linux, Windows, and macOS.
-    * **Error Handling:** Robust validation to prevent crashes if input files are missing.
+
+### 2. Bulk User Domain Migrator (`domain_migrator.py`)
+A Python automation script for batch processing user data during system migrations.
+
+* **Problem Solved:** Automates the tedious task of updating email domains (e.g., changing `@abc.edu` to `@xyz.edu`) for hundreds of users in legacy databases or CSV exports.
+* **Key Features:**
+    * **CSV Parsing:** Reads and modifies CSV data structures programmatically.
+    * **Regex Substitution:** Safely identifies and replaces email domains without affecting usernames.
+    * **Dynamic Column Handling:** Automatically detects email columns even if headers contain whitespace errors.
 
 ---
 
@@ -25,36 +33,37 @@ A command-line interface (CLI) tool that allows support engineers to filter mass
 
 ### Prerequisites
 * Python 3.x installed
-* A sample log file (e.g., `syslog.log` or any `.txt` file)
+* Sample data files (e.g., `syslog.log` for logs, `user_emails.csv` for migration)
 
-### How to Run `log_search.py`
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/it-support-toolkit.git](https://github.com/yourusername/it-support-toolkit.git)
-    cd it-support-toolkit
-    ```
-
-2.  **Run the script:**
+### 🔹 Tool 1: How to Run `log_search.py`
+1.  **Run the script:**
     Pass the log file you want to analyze as an argument.
     ```bash
     python3 log_search.py syslog.log
     ```
-
-3.  **Follow the prompt:**
+2.  **Follow the prompt:**
     The script will ask: `What is the error?`
-    * *Example Input:* `CRON ERROR` (This searches for lines containing both "CRON" and "ERROR")
+    * *Example Input:* `CRON ERROR`
+3.  **View Results:**
+    The script will save the results to: `~/data/errors_found.log`
 
-4.  **View Results:**
-    The script will create a directory and save the results:
-    `~/data/errors_found.log`
+### 🔹 Tool 2: How to Run `domain_migrator.py`
+1.  **Run the script:**
+    Pass the CSV file you want to update.
+    ```bash
+    python3 domain_migrator.py user_emails.csv
+    ```
+2.  **View Results:**
+    The script will generate a new file in the same folder named `user_emails_updated.csv` containing the new domain addresses.
 
 ---
 
 ## 💡 Technical Skills Demonstrated
 This repository showcases the following technical competencies relevant to **IT Operations** and **DevOps**:
 
-* **File I/O Operations:** Reading, writing, and appending to files safely using context managers (`with open...`).
-* **Regular Expressions (Regex):** Using the `re` module for pattern matching to filter noise from data.
+* **File I/O Operations:** Reading/writing logs and CSVs safely using context managers (`with open...`).
+* **Regular Expressions (Regex):** Using the `re` module for precise pattern matching and substitution.
+* **Data Migration:** Automating bulk data updates and format standardization.
 * **Defensive Programming:** Implementing `try/except` blocks and directory checks (`os.path.exists`) to build resilient tools.
 * **CLI Development:** Handling command-line arguments using `sys.argv`.
 
