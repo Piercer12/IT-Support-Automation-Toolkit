@@ -45,6 +45,29 @@ A quick command-line utility to retrieve user contact details without manually o
     ```
 2.  **View Results:**
     Output: `Email for John Doe: jdoe@example.com`
+    
+
+    ### 4. Feedback to Web API Uploader (`feedback_uploader.py`)
+A backend automation script that digitizes offline text data by uploading it to a RESTful API endpoint.
+
+* **Problem Solved:** Bridges the gap between legacy file-based systems (offline feedback forms) and modern web dashboards.
+* **Key Features:**
+    * **API Integration:** Uses the Python `requests` library to send POST requests with JSON payloads.
+    * **Data Parsing:** Extracts structured data (Title, Date, Author) from unstructured text files.
+    * **Testing Mode:** Configured to use `httpbin.org` for live demonstration purposes without needing a local server.
+
+---
+### 🔹 Tool 4: How to Run `feedback_uploader.py`
+1.  Navigate to the tool directory:
+    ```bash
+    cd Feedback-Uploader-Tool
+    ```
+2.  Run the script:
+    ```bash
+    python3 feedback_uploader.py
+    ```
+3.  **View Results:**
+    The script will process the files in `feedback_data/` and display the HTTP success codes (200 OK) received from the test server.
 
 ---
 
