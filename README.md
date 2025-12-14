@@ -92,6 +92,31 @@ A business intelligence script that ingests raw sales data (JSON) and outputs ac
 3.  **View Results:**
     * The script will print an **Email Simulation** to the console.
     * It will generate a file named `sales_summary_report.csv` in the same folder.
+  
+
+### 6. Automated System Health Monitor (`system_health_monitor.py`)
+A proactive infrastructure monitoring script that checks critical system resources (CPU, Memory, Disk, Network) and triggers alerts.
+
+* **Problem Solved:** Prevents server crashes by detecting resource exhaustion before it becomes critical.
+* **Key Features:**
+    * **Resource Tracking:** Uses `psutil` and `shutil` libraries to inspect real-time system metrics.
+    * **Threshold Logic:** Automatically triggers specific alerts if CPU > 80% or Free Disk < 20%.
+    * **Network Verification:** Ensures local DNS resolution is functioning correctly.
+    * **Alert Simulation:** Prints formatted alert messages to the console for testing purposes (can be extended to SMTP).
+
+---
+### 🔹 Tool 6: How to Run `system_health_monitor.py`
+1.  **Install dependency:**
+    (Note: This script requires the `psutil` library. If you don't have it, install it via pip)
+    ```bash
+    pip install psutil
+    ```
+2.  **Run the script:**
+    ```bash
+    python3 system_health_monitor.py
+    ```
+3.  **View Results:**
+    The script will output the status of your current computer (e.g., `[OK] CPU Usage: 12%`).
 
 ---
 
